@@ -1,1 +1,2 @@
-# face-detection
+### Face Detection in Images
+### Built with React
