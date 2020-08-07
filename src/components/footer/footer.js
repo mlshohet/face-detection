@@ -4,7 +4,7 @@ import './footer.css';
 const Footer = () => {
 	return(
 		<div className='footer white bg-black pr4 pt5 mt4'>
-			<p className='f6'>greenhearth 2020</p>
+			<p className='f6'>Michael Shohet, 2020</p>
 		</div>
 	);
 }
