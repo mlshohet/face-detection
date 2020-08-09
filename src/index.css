@@ -1,9 +1,11 @@
 body {
-  margin: 0;
-  font-family: 'Nunito','Ubuntu', 'Courier', monospace;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: white /*linear-gradient(to bottom, rgb(203, 241, 255), rgb(255, 255, 255));*/
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	font-family: 'Nunito','Ubuntu', 'Courier', monospace;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: white /*linear-gradient(to bottom, rgb(203, 241, 255), rgb(255, 255, 255));*/
 }
 
 code {
