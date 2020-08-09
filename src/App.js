@@ -135,7 +135,7 @@ class App extends Component {
                   : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
               ) 
         }
-        <Footer />
+    
       </div>
     );
   }
