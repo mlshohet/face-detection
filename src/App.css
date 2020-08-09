@@ -3,7 +3,7 @@
 }
 
 .tagline {
-    font-size: calc(22px + (300px - 22vw) * ((100vw - 320px) / (1920 - 320)));;
+    font-size: 5rem;
     color: #EEEEEE;
     font-weight: 700;
     margin-bottom: 3.2rem;
@@ -24,17 +24,19 @@
       font-size: 1.8rem;
     }
   }
-/*@media screen and (max-width: 320px) {
-    div.tagline {
-       font-size: 10vw;
-    }
-  }
 
-@media screen and (width: 800px) {
-    div.tagline {
-       font-size: 6vw;
+  @media (min-width: 320px) {
+    .tagline {
+       font-size: 5vw;
+     }
     }
-  }*/
+
+    @media (width: 800px) {
+      .tagline {
+         font-size: 6vw;
+      }
+    }
+
 
 
 .header {
