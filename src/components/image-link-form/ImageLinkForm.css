@@ -1,7 +1,5 @@
 .link-form {
-	min-height: 100vh; /* will cover the 100% of viewport */
-	overflow: hidden;
-	display: block;
+	height: 100vh; /* will cover the 100% of viewport */
 	position: relative;
 }
 
