@@ -3,7 +3,7 @@
 }
 
 .tagline {
-    font-size: calc(10vw + (20vw - 10vw) * ((100vw - 320px) / (1920 - 320)));;
+    font-size: calc(22px + (300px - 22vw) * ((100vw - 320px) / (1920 - 320)));;
     color: #EEEEEE;
     font-weight: 700;
     margin-bottom: 3.2rem;
