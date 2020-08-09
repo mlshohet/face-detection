@@ -1,4 +1,5 @@
 body {
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -15,8 +16,9 @@ code {
 }
 
 .footer {
-	margin-top: 2rem;
+	margin-top: 1rem;
 	padding: 1rem;
+	position: fixed;
 	bottom: 0;
 	left: 0;
 	width: 100%;
