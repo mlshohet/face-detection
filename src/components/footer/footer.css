@@ -1,5 +1,5 @@
 .footer {
 	display: flex;
 	justify-content: flex-end;
-	position: absolute;
+	width: 100%;
 }
