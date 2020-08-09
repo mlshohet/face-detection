@@ -9,6 +9,10 @@
     margin-bottom: 3.2rem;
     text-align: left;
 
+    @media screen and (max-width: 320px) {
+    font-size: 1rem;
+    }
+    
     @include respond(tab-land) {
       font-size: 4rem;
     }
