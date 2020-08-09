@@ -3,7 +3,7 @@ import './Signout.css';
 
 const Signout = ({ onRouteChange }) => {
 	return(
-		<div className='center'>
+		<div className='center mb7'>
 			<button className='signout f6 link br-pill ph3 pv2 mt4 center dim bg-transparent pointer'
 				onClick={() => { onRouteChange('signout') }}>
 					Sign Out
