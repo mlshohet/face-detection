@@ -1,6 +1,7 @@
 body {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	margin: 0;
 	font-family: 'Nunito','Ubuntu', 'Courier', monospace;
 	-webkit-font-smoothing: antialiased;
@@ -14,9 +15,8 @@ code {
 }
 
 .footer {
-	margin-top: 1rem;
-	padding: 2rem;
-	position: relative;
+	margin-top: 2rem;
+	padding: 1rem;
 	bottom: 0;
 	left: 0;
 	width: 100%;
