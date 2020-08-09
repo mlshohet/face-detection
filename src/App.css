@@ -3,7 +3,7 @@
 }
 
 .tagline {
-  font-size: 5rem;
+  font-size: calc(14px + (26 - 14) * ((100vw - 320px) / (1600 - 300)));;
   color: #EEEEEE;
     font-weight: 700;
     margin-bottom: 3.2rem;
@@ -24,7 +24,7 @@
       font-size: 1.8rem;
     }
   }
-@media screen and (max-width: 320px) {
+/*@media screen and (max-width: 320px) {
     div.tagline {
        font-size: 10vw;
     }
@@ -34,7 +34,7 @@
     div.tagline {
        font-size: 6vw;
     }
-  }
+  }*/
 
 
 .header {
