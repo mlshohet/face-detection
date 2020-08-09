@@ -3,7 +3,7 @@
 }
 
 .tagline {
-    font-size: 5rem;
+    font-size: 4rem;
     color: #EEEEEE;
     font-weight: 700;
     margin-bottom: 3.2rem;
@@ -27,7 +27,7 @@
 
   @media (min-width: 320px) {
     .tagline {
-       font-size: 10vw;
+       font-size: 5vw;
      }
     }
 
