@@ -1,8 +1,3 @@
-.link-form {
-	height: 100vh; /* will cover the 100% of viewport */
-	position: relative;
-}
-
 .form {
 	width: 500px;
 	background-color: '888888';
