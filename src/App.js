@@ -9,7 +9,6 @@ import Signin from './components/signin/signin';
 import Signout from './components/signout/signout';
 import Register from './components/register/register'
 import Rank from './components/rank/Rank';
-import spinner from './spinner.gif';
 import FaceRecognition from './components/face-recognition/FaceRecognition';
 import './App.css';
 

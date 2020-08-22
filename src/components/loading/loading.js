@@ -3,8 +3,8 @@ import spinner from './spinner.gif';
 
 const Loading = () => {
 	return(
-			<div>
-              <img className="pv6 center" alt="loading" src={spinner} width="540px", height="260px"/>
+			<div className="pv6 center">
+              <img alt="loading" src={spinner} width="540px", height="260px"/>
             </div>
 	);
 }
