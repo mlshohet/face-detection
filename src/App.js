@@ -120,7 +120,7 @@ class App extends Component {
         {
           this.state.route === 'loading'
           ? (
-              <h3 className="pv5">Please wait. Loading.</h3>
+              //<h3 className="pv5">Please wait. Loading.</h3>
               <img className="center" alt="loading" src="spinner.gif">
               )
           : (
