@@ -120,9 +120,7 @@ class App extends Component {
           onRouteChange={this.onRouteChange}
           isSignedIn={this.state.isSignedIn} />
         {
-          this.state.route === 'loading'
-          ? <Loading />
-          : (
+  
             this.state.route === 'home'
               ? <div>
                   <Rank name={this.state.user.name} entries={this.state.user.entries}/>
@@ -136,13 +134,14 @@ class App extends Component {
                   }
                   <Signout onRouteChange={this.onRouteChange} isSignedIn={this.state.isSignedIn}/>
                 </div>
-              
-              : (
-                  this.state.route === 'signout'
-                    ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
-                    : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
-                ) 
-              )
+
+              : this.state.route === 'loading'
+                ? <Loading />
+                : (
+                    this.state.route === 'signout'
+                      ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+                      : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+                  ) 
         }
         <Footer />
       </div>
