@@ -119,7 +119,10 @@ class App extends Component {
           isSignedIn={this.state.isSignedIn} />
         {
           this.state.route === 'loading'
-          ? <h1 className = "pv5">Loading... </h1>
+          ? (
+              <h3 className="pv5">Please wait. Loading.</h3>
+              <img className="center" alt="loading" src="spinner.gif">
+              )
           : (
             this.state.route === 'home'
               ? <div>
