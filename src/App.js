@@ -121,7 +121,9 @@ class App extends Component {
         {
           this.state.route === 'loading'
           ? (
+              <div>
               <img className="pv3 center" alt="loading" src={spinner} width="540px", height="260px"/>
+              </div>
               )
           : (
             this.state.route === 'home'
