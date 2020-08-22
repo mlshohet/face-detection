@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Banner from './components/banner/banner';
 import Navigation from './components/navigation/navigation'
 import Logo from './components/logo/logo';
+import Loading from './components/loading/loading';
 import Footer from './components/footer/footer'
 import ImageLinkForm from './components/image-link-form/ImageLinkForm';
 import Signin from './components/signin/signin';
@@ -120,11 +121,7 @@ class App extends Component {
           isSignedIn={this.state.isSignedIn} />
         {
           this.state.route === 'loading'
-          ? (
-              <div>
-              <img className="pv3 center" alt="loading" src={spinner} width="540px", height="260px"/>
-              </div>
-              )
+          ? <Loading />
           : (
             this.state.route === 'home'
               ? <div>
