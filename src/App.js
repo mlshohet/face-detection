@@ -8,6 +8,7 @@ import Signin from './components/signin/signin';
 import Signout from './components/signout/signout';
 import Register from './components/register/register'
 import Rank from './components/rank/Rank';
+import spinner from './spinner.gif';
 import FaceRecognition from './components/face-recognition/FaceRecognition';
 import './App.css';
 
@@ -121,7 +122,7 @@ class App extends Component {
           this.state.route === 'loading'
           ? (
               //<h3 className="pv5">Please wait. Loading.</h3>
-              <img className="pv5 center" alt="loading" src="./spinner.gif"/>
+              <img className="pv5 center" alt="loading" src={spinner}/>
               )
           : (
             this.state.route === 'home'
