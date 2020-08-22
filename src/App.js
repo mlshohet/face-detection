@@ -119,7 +119,7 @@ class App extends Component {
           isSignedIn={this.state.isSignedIn} />
         {
           this.state.route === 'loading'
-          ? <h1> Waiting for server... </h1>
+          ? <h1 className = "pv7 "> Loading... </h1>
           : (
             this.state.route === 'home'
               ? <div>
