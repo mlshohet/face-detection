@@ -118,29 +118,24 @@ class App extends Component {
           onRouteChange={this.onRouteChange}
           isSignedIn={this.state.isSignedIn} />
         {
-          this.state.route === 'loading'
-          ? <h1> Waiting for server... </h1>
-          : (
-            this.state.route === 'home'
-              ? <div>
-                  <Rank name={this.state.user.name} entries={this.state.user.entries}/>
-                  <ImageLinkForm 
-                    onInputChange={this.onInputChange}
-                    onButtonSubmit={this.onButtonSubmit}
-                  />
-                  {  this.state.imageURL === ''
-                       ? <div className = 'w1'></div>
-                       : <FaceRecognition box={this.state.box} imageURL={this.state.imageURL} />
-                  }
-                  <Signout onRouteChange={this.onRouteChange} isSignedIn={this.state.isSignedIn}/>
-                </div>
-              
-              : (
-                  this.state.route === 'signout'
-                    ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
-                    : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
-                ) 
-              )
+          if (this.state.route === 'home') {
+            return <div>
+                <Rank name={this.state.user.name} entries={this.state.user.entries}/>
+                <ImageLinkForm 
+                  onInputChange={this.onInputChange}
+                  onButtonSubmit={this.onButtonSubmit}
+                />
+                {  this.state.imageURL === ''
+                     ? <div className = 'w1'></div>
+                     : <FaceRecognition box={this.state.box} imageURL={this.state.imageURL} />
+                }
+                <Signout onRouteChange={this.onRouteChange} isSignedIn={this.state.isSignedIn}/>
+              </div>
+            }
+             ( this.state.route === 'signout'
+                  ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+                  : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+              ) 
         }
         <Footer />
       </div>

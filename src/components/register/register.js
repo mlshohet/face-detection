@@ -6,7 +6,7 @@ class Register extends React.Component {
 		this.state = {
 			name: '',
 			email: '',
-			password: ''
+			password: '',
 		}
 	}
 
@@ -42,6 +42,8 @@ class Register extends React.Component {
 				if (user.id) {
 					this.props.loadUser(user);
 					this.props.onRouteChange('home');
+				} else {
+					this.props.onRouteChange('loading');
 				}
 			});
 		}
