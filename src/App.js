@@ -17,7 +17,7 @@ const initialState = {
       box : {},
       route: 'signout',
       isSignedIn: false,
-      isLoading: false,
+      isLoading: true,
       user: {
         id: '',
         name: '',
@@ -102,7 +102,7 @@ class App extends Component {
     } else if (route === 'home') {
       this.setState({isSignedIn: true});
     } else if (route === 'loading') {
-      this.setState({isLoading: true});
+      this.setState({isLoading: false});
     }
     this.setState({route: route});
   }
@@ -118,7 +118,7 @@ class App extends Component {
           onRouteChange={this.onRouteChange}
           isSignedIn={this.state.isSignedIn} />
         {
-          this.state.route === 'loading'
+          this.state.isLoading
           ? <h1> Waiting for server... </h1>
           : (
             this.state.route === 'home'
