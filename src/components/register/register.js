@@ -28,7 +28,7 @@ class Register extends React.Component {
 			this.state.password === '') {
 				this.props.onRouteChange('signin');
 		} else {
-			this.props.onRouteChange('loading');
+			//this.props.onRouteChange('loading');
 			fetch('https://salty-reaches-64216.herokuapp.com/register', {
 				method: 'post',
 				headers: {'Content-Type': 'application/json'},
