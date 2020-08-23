@@ -2,7 +2,7 @@ import React from 'react';
 import './loading.css';
 import spinner from './spinner.gif';
 
-componentDidMount () {
+componentDidMount() {
 	document.body.style.overflow = 'auto';
 }
 
