@@ -4,7 +4,7 @@ import spinner from './spinner.gif';
 
 const Loading = () => {
 	return(
-              <img className="loading mt1 center" alt="loading" src={spinner} />
+              <img className="loading mb5 center" alt="loading" src={spinner} />
 	);
 }
 
