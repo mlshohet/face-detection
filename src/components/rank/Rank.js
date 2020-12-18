@@ -23,7 +23,7 @@ class Rank extends React.Component {
 	}
 
 	generateEmoji = entires => {
-		fetch(`https://sigmen3qx7.execute-api.us-east-1.amazonaws.com/prod/rank?rank=${this.props.entries}`)
+		fetch(`https://t4mv72u239.execute-api.us-east-1.amazonaws.com/dev/rank?rank=${this.props.entries}`)
 			.then(response => response.json())
 			.then(data => this.setState({ emoji: data.input }))
 			.catch(err => console.log(err))
@@ -36,7 +36,7 @@ class Rank extends React.Component {
 					{`Welcome, ${this.props.name}. Your face detection count is ${this.props.entries}.`}
 				</div>
 				<div className='f3'>
-					{`Rank Badge: ${this.state.emoji}`}
+					{`${this.state.emoji}`}
 				</div>
 			</div>
 		);
