@@ -71,8 +71,8 @@ class App extends Component {
   onButtonSubmit = () => {
     this.setState({imageURL: this.state.input});
     //Line below for production. Comment out before deployment and uncomment heroku address
-    fetch('http://localhost:3000/imageURL', {
-    //fetch('https://salty-reaches-64216.herokuapp.com/imageURL', {
+    //fetch('http://localhost:3000/imageURL', {
+    fetch('https://salty-reaches-64216.herokuapp.com/imageURL', {
           method: 'post',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
@@ -83,8 +83,8 @@ class App extends Component {
     .then(response => {
       if (response) {
         //Line below for production. Comment out before deployment and uncomment heroku address
-        fetch('http://localhost:3000/rank', {
-        //fetch('https://salty-reaches-64216.herokuapp.com/rank', {
+        //fetch('http://localhost:3000/rank', {
+        fetch('https://salty-reaches-64216.herokuapp.com/rank', {
           method: 'put',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
