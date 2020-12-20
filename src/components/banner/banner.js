@@ -1,11 +1,12 @@
 import React from 'react';
+import './banner.css';
 
 const Banner = () => {
 	return (
-		<div>
-			<p className='tagline tc'>
+		<div className='banner'>
+			<div className='tagline tc'>
 				IMAGE FACE DETECTION
-			</p>
+			</div>
 		</div>
 		);
 }

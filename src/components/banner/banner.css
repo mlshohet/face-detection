@@ -1,6 +1,4 @@
-.rank {
-	margin-top: 0;
-	height: 100px;
+.banner {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
