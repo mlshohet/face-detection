@@ -24,9 +24,9 @@ class Signin extends React.Component {
 				this.props.onRouteChange('signout');
 		} else {
 			//Line below for dev only. Comment out before deployment
-			//fetch('http://localhost:3000/signin', {
+			fetch('http://localhost:3000/signin', {
 			//Line below for heroku. Uncomment before deployment
-			fetch('https://salty-reaches-64216.herokuapp.com/signin', {
+			//fetch('https://salty-reaches-64216.herokuapp.com/signin', {
 				method: 'post',
 				headers: {'Content-Type': 'application/json'},
 				body: JSON.stringify({

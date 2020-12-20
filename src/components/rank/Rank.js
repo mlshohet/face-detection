@@ -31,11 +31,11 @@ class Rank extends React.Component {
 
 	render() {
 		return (
-			<div className='rank bg-black f6 white pa2 pl5 db'>
+			<div className='rank bg-black f6 white db'>
 				<div>
 					{`Welcome, ${this.props.name}. Your face detection count is ${this.props.entries}.`}
 				</div>
-				<div className='f3'>
+				<div className='f3 pt2'>
 					{`${this.state.emoji}`}
 				</div>
 			</div>

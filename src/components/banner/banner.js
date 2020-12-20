@@ -3,8 +3,8 @@ import React from 'react';
 const Banner = () => {
 	return (
 		<div>
-			<p className='tagline pr2'>
-				Face detection in images
+			<p className='tagline tc'>
+				IMAGE FACE DETECTION
 			</p>
 		</div>
 		);
