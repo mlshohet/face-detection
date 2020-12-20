@@ -30,9 +30,9 @@ class Register extends React.Component {
 		} else {
 			this.props.onRouteChange('loading');
 			//Line below for dev. Comment before deployment.
-			fetch('http://localhost:3000/register', {
+			//fetch('http://localhost:3000/register', {
 			//Uncomment below for Heroku deployment
-			//fetch('https://salty-reaches-64216.herokuapp.com/register', {
+			fetch('https://salty-reaches-64216.herokuapp.com/register', {
 				method: 'post',
 				headers: {'Content-Type': 'application/json'},
 				body: JSON.stringify({
