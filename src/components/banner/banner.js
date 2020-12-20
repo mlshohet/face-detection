@@ -4,7 +4,7 @@ import './banner.css';
 const Banner = () => {
 	return (
 		<div className='banner'>
-			<div className='tagline tc'>
+			<div className='pa2 tagline tc'>
 				IMAGE FACE DETECTION
 			</div>
 		</div>
