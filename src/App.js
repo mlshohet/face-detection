@@ -9,6 +9,8 @@ import Signin from './components/signin/signin';
 import Signout from './components/signout/signout';
 import Register from './components/register/register'
 import Rank from './components/rank/Rank';
+import Modal from './components/modal/Modal';
+import Profile from './components/profile/Profile';
 import FaceRecognition from './components/face-recognition/FaceRecognition';
 import './App.css';
 
@@ -18,13 +20,16 @@ const initialState = {
       boxes : [],
       route: 'signout',
       isSignedIn: false,
+      isProfileOpen: false,
       isLoading: false,
       user: {
         id: '',
         name: '',
         email: '',
         entries: 0,
-        joined: ''
+        joined: '',
+        age: '',
+        pet: ''
       }
 }
 
@@ -113,7 +118,15 @@ class App extends Component {
     this.setState({route: route});
   }
 
+  toggleModal = () => {
+    this.setState(prevState => ({
+      ...prevState,
+       isProfileOpen: !prevState.isProfileOpen
+    }))
+  };
+
   render() {
+    const { user } = this.state;
     return (
       <div className="App">
         <div className="bg-black">
@@ -122,7 +135,21 @@ class App extends Component {
         </div>
         <Navigation 
           onRouteChange={this.onRouteChange}
-          isSignedIn={this.state.isSignedIn} />
+          isSignedIn={this.state.isSignedIn}
+          toggleModal={this.toggleModal}
+        />
+
+       { 
+           this.state.isProfileOpen &&
+           <Modal>
+              <Profile 
+                isProfileOpen={this.state.isProfileOpen}
+                toggleModal={this.toggleModal}
+                user={user}
+              />
+           </Modal>
+       }
+      
         {
   
             this.state.route === 'home'
