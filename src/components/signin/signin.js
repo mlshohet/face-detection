@@ -1,5 +1,4 @@
 import React from 'react';
-import './signin.css';
 
 class Signin extends React.Component {
 
@@ -19,15 +18,20 @@ class Signin extends React.Component {
 		this.setState({signInPassword: event.target.value});
 	}
 
+	saveAuthTokenInSession = (token) => {
+		window.sessionStorage.setItem('token', token)
+
+	}
+
 	onSubmitSignin = () => {
 		if (this.state.signInEmail === '' ||
 			this.state.signInPassword === '') {
 				this.props.onRouteChange('signout');
 		} else {
 			//Line below for dev only. Comment out before deployment
-			fetch('http://localhost:3000/signin', {
+			//fetch('http://localhost:3000/signin', {
 			//Line below for heroku. Uncomment before deployment
-			//fetch('https://salty-reaches-64216.herokuapp.com/signin', {
+			fetch('https://salty-reaches-64216.herokuapp.com/signin', {
 				method: 'post',
 				headers: {'Content-Type': 'application/json'},
 				body: JSON.stringify({
@@ -37,9 +41,25 @@ class Signin extends React.Component {
 			})
 			.then(response => response.json())
 			.then(data => {
-				if (data.id) {
-					this.props.loadUser(data);
-					this.props.onRouteChange('home');
+				if (data.userId && data.success === 'true') {
+					this.saveAuthTokenInSession(data.token);
+					//Heroku deployment
+					fetch(`https://salty-reaches-64216.herokuapp.com/profile/${data.userId}`, {
+					//Local host dev
+		          		//fetch(`http://localhost:3000/profile/${data.userId}`, {
+		              		method: 'get',
+		              		headers: {
+		               		 'Content-Type': 'application/json',
+		              		 'Authorization': data.token
+		             		}
+		          		})
+		        		.then(res => res.json())
+		        		.then(user => {
+		            		if (user && user.email) {
+		              			this.props.loadUser(user);
+		              			this.props.onRouteChange('home');
+            				}
+          				})
 				}
 			});
 		}
@@ -57,7 +77,7 @@ class Signin extends React.Component {
 			     		 <div className="mt3">
 			        		<label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
 			        		<input 
-			        			className="pa2 input-reset ba bg-transparent hover-bg-black hover-white hover-black w-100"
+			        			className="pa2 input-reset ba bg-transparent w-100"
 			        			type="email"
 			        			name="email-address"
 			        			id="email-address" 
@@ -67,7 +87,7 @@ class Signin extends React.Component {
 			      		<div className="mv3">
 			        		<label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
 			        		<input 
-			        			className="pa2 input-reset ba bg-transparent hover-bg-black hover-white hover-black w-100" 
+			        			className="pa2 input-reset ba bg-transparent w-100" 
 			        			type="password" 
 			        			name="password"  
 			        			id="password" 
