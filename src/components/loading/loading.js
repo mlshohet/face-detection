@@ -1,12 +1,13 @@
 import React from 'react';
+import Spinner from '../spinner/spinner';
 import './loading.css';
-import spinner from './spinner.gif';
+//import spinner from './spinner.gif';
 
 const Loading = () => {
 	return(
-			<div className="center mt6 mb6">
-              <img className="loading" alt="load" src={spinner} />
-			</div>
+		<div className='flex items-center justify-center h5'>
+			<Spinner />
+		</div>
 	);
 }
 

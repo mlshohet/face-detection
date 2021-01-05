@@ -28,6 +28,7 @@ class Signin extends React.Component {
 			this.state.signInPassword === '') {
 				this.props.onRouteChange('signout');
 		} else {
+			this.props.onRouteChange('loading');
 			//Line below for dev only. Comment out before deployment
 			//fetch('http://localhost:3000/signin', {
 			//Line below for heroku. Uncomment before deployment
