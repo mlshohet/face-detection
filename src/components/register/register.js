@@ -53,7 +53,7 @@ class Register extends React.Component {
 				if (data.userId && data.success === 'true') {
 					this.saveAuthTokenInSesson(data.token);
 			          //Heroku deployment
-			          fetch(`https://salty-reaches-64216.herokuapp.com/profile/${data.id}`, {
+			          fetch(`https://salty-reaches-64216.herokuapp.com/profile/${data.userId}`, {
 			          //Local dev
 			          //fetch(`http://localhost:3000/profile/${data.userId}`, {
 			              method: 'get',
