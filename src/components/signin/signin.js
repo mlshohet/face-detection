@@ -47,7 +47,7 @@ class Signin extends React.Component {
 					//Heroku deployment
 					fetch(`https://salty-reaches-64216.herokuapp.com/profile/${data.userId}`, {
 					//Local host dev
-		          		//fetch(`http://localhost:3000/profile/${data.userId}`, {
+		          	//	fetch(`http://localhost:3000/profile/${data.userId}`, {
 		              		method: 'get',
 		              		headers: {
 		               		 'Content-Type': 'application/json',

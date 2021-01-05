@@ -22,6 +22,10 @@ class Register extends React.Component {
 		this.setState({password: event.target.value});
 	}
 
+	saveAuthTokenInSesson = (token) => {
+		window.sessionStorage.setItem('token', token);
+	}
+
 	onSubmitSignin = () => {
 		if (this.state.name === '' ||
 			this.state.email === '' ||
@@ -34,7 +38,10 @@ class Register extends React.Component {
 			//Uncomment below for Heroku deployment
 			fetch('https://salty-reaches-64216.herokuapp.com/register', {
 				method: 'post',
-				headers: {'Content-Type': 'application/json'},
+				headers: {
+					'Content-Type': 'application/json',
+					'Authorization': window.sessionStorage.getItem('token')
+				},
 				body: JSON.stringify({
 					name: this.state.name,
 					email: this.state.email,
@@ -42,10 +49,28 @@ class Register extends React.Component {
 				})
 			})
 			.then(response => response.json())
-			.then(user => {
-				if (user.id) {
-					this.props.loadUser(user);
-					this.props.onRouteChange('home');
+			.then(data => {
+				if (data.userId && data.success === 'true') {
+					this.saveAuthTokenInSesson(data.token);
+			          //Heroku deployment
+			          fetch(`https://salty-reaches-64216.herokuapp.com/profile/${data.id}`, {
+			          //Local dev
+			          //fetch(`http://localhost:3000/profile/${data.userId}`, {
+			              method: 'get',
+			              headers: {
+			                'Content-Type': 'application/json',
+			                'Authorization': data.token
+			              }
+			          })
+			          .then(res => res.json())
+			          .then(user => {
+			            if (user && user.email) {
+			              console.log(user);
+			              this.props.loadUser(user);
+			              this.props.onRouteChange('home');
+			            }
+			          })
+				      .catch(console.log)
 				} 
 			})
 			.catch((err) => {
